@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Font awesome icons -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- RALEWAY FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500" rel="stylesheet">
+
+    <!-- Roboto font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,600" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+
+    <title>Copyright</title>
+    <script src="./node_modules/web3/dist/web3-light.js"></script>
+</head>
+
+<body>
+
+    <div class="page-container">
+
+        <div class="row">
+
+            <!-- SIDENAV BEGINS -->
+
+
+            <div class="col-lg-2 sidenav">
+
+                <div class="title">
+                    <a href="/store">STORE</a>
+                </div>
+                <div class="title">
+                    <a href="/access">SHOWTIME</a>
+                </div>
+                <div class="title">
+                    <a href="/up">UPLOAD</a>
+                </div>
+                <div class="title">
+                    <a href="/transfer">TRANSFERS</a>
+                </div>
+                <div class="title">
+                    <a href="/">DECRYPT</a>
+                </div>
+                <div class="title">
+                    <a href="/dagger">DAGGER LOGS</a>
+                </div>
+
+            </div>
+
+            <!-- SIDENAV ENDS -->
+
+
+
+
+
+
+            <!-- MAIN BODY BEGINS -->
+
+
+            <div class="offset-lg-2 col-lg-10 main-body">
+
+                <div class="row">
+                    <div class="title col-8">
+                        Download Decrypted Asset
+                    </div>
+
+                </div>
+                <br>
+                <div class="row">
+
+                    <button class="offset-md-1" onclick='<%= clickhandler %>'>Get file</button>
+                </div>
+            </div>
+
+            <!-- MAIN BODY ENDS -->
+
+        </div>
+
+    </div>
+</body>
+
+
+<script>
+    function createFileFromHex(cleaned_hex, filename) {
+        console.log("I am here");
+
+        if (cleaned_hex.length % 2) {
+            alert("Error: cleaned hex string length is odd.");
+            return;
+        }
+        var binary = new Array();
+        for (var i = 0; i < cleaned_hex.length / 2; i++) {
+            var h = cleaned_hex.substr(i * 2, 2);
+            binary[i] = parseInt(h, 16);
+        }
+        var byteArray = new Uint8Array(binary);
+        var a = window.document.createElement('a');
+        a.href = window.URL.createObjectURL(new Blob([byteArray], {
+            type: 'application/octet-stream'
+        }));
+        a.download = filename;
+        // Append anchor to body.
+        document.body.appendChild(a)
+        a.click();
+        // Remove anchor from body
+        document.body.removeChild(a)
+    }
+</script>
+
+
+</body>
+
+</html>

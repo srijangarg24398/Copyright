@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Font awesome icons -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- RALEWAY FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500" rel="stylesheet">
+
+    <!-- Roboto font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,600" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+
+    <title>Copyright</title>
+    <script src="./node_modules/web3/dist/web3-light.js"></script>
+
+</head>
+
+<body>
+
+    <div class="page-container">
+
+        <div class="row">
+
+            <!-- SIDENAV BEGINS -->
+
+
+            <div class="col-lg-2 sidenav">
+
+                <div class="title">
+                    <a href="/store">STORE</a>
+                </div>
+                <div class="title">
+                    <a href="/access">SHOWTIME</a>
+                </div>
+                <div class="title">
+                    <a href="/up">UPLOAD</a>
+                </div>
+                <div class="title">
+                    <a href="/transfer">TRANSFERS</a>
+                </div>
+                <div class="title">
+                    <a href="/">DECRYPT</a>
+                </div>
+                <div class="title">
+                    <a href="/dagger">DAGGER LOGS</a>
+                </div>
+
+            </div>
+
+            <!-- SIDENAV ENDS -->
+
+
+
+
+
+
+            <!-- MAIN BODY BEGINS -->
+
+
+            <div class="offset-lg-2 col-lg-10 main-body">
+
+                <div class="row">
+                    <div class="title col-4">
+                        Encrypt and Decrypt assets
+                    </div>
+
+                </div>
+                <br>
+
+                <div class="divider">Encrypt</div>
+
+                <div class="row">
+                    <form id="uploadForm" enctype="multipart/form-data" method="post" action="/encrypt">
+                        <input type="file" name="enc" />
+                        <input type="submit" value="ENCRYPT File" name="submit">
+                    </form>
+
+                </div>
+
+                <div class="divider">De-crypt</div>
+
+                <div class="row">
+
+                    <form id="uploadForm" enctype="multipart/form-data" method="post" action="/decrypt">
+                        <input type="file" name="dec" />
+                        <input type="submit" value="DECRYPT File" name="submit">
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- MAIN BODY ENDS -->
+
+        </div>
+
+    </div>
+</body>
+
+</html>
